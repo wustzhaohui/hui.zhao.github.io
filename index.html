@@ -171,6 +171,140 @@ ga('send', 'pageview');
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-浅谈vue路由" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/11/浅谈vue路由/">浅谈vue路由</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/11/浅谈vue路由/" class="archive-article-date">
+  	<time datetime="2019-03-11T07:52:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="什么是vueRouter？"><a href="#什么是vueRouter？" class="headerlink" title="什么是vueRouter？"></a>什么是<code>vueRouter</code>？</h1><h2 id="以下是引用vueRouter官方解释"><a href="#以下是引用vueRouter官方解释" class="headerlink" title="以下是引用vueRouter官方解释"></a>以下是引用<code>vueRouter</code>官方解释</h2><blockquote>
+<p>Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建单页面应用变得易如反掌。包含的功能有：</p>
+<ul>
+<li>嵌套的路由/视图表</li>
+<li>模块化的、基于组件的路由配置</li>
+<li>路由参数、查询、通配符</li>
+<li>基于 <code>Vue.js</code> 过渡系统的视图过渡效果</li>
+<li>细粒度的导航控制</li>
+<li>带有自动激活的 <code>CSS class</code> 的链接</li>
+<li>HTML5 历史模式或 hash 模式，在 IE9 中自动降级</li>
+<li>自定义的滚动条行为</li>
+</ul>
+</blockquote>
+<h2 id="如何使用？"><a href="#如何使用？" class="headerlink" title="如何使用？"></a>如何使用？</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><code>npm  i vue-router</code></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>在入口文件引用vue-router</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import VueRouter from &apos;vue-router&apos;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加到Vue引用</li>
+</ul>
+<p><em>前提是你已经引入了Vue</em></p>
+<p><code>Vue.use(VueRouter)</code></p>
+<ul>
+<li>你可以在入口文件来直接引用你的页面格式如下</li>
+</ul>
+<ul>
+<li>官网写法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import index from $&#123;path&#125;</span><br><span class="line">// path为你的页面/组件地址</span><br><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">    [&#123;</span><br><span class="line">        name: &apos;index&apos;,</span><br><span class="line">        path: &apos;/index&apos;,</span><br><span class="line">        component: index</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>你可以这么写</li>
+</ul>
+<p>自定义一个<code>routers.js</code>文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import index from `$&#123;path&#125;`</span><br><span class="line">export default [</span><br><span class="line">    &#123;</span><br><span class="line">        name: &apos;index&apos;,</span><br><span class="line">        path: &apos;/index&apos;,</span><br><span class="line">        component: index</span><br><span class="line">    &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>然后在入口文件中去引入即可</p>
+<ul>
+<li>最后在Vue实例上去使用即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">  router</span><br><span class="line">&#125;).$mount(&apos;#app&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="vue-router路由传参"><a href="#vue-router路由传参" class="headerlink" title="vue-router路由传参"></a>vue-router路由传参</h3><ul>
+<li><code>params</code></li>
+</ul>
+<p>可以直接在路由的<code>path</code>属性上去添加你需要的参数。比如前文我们写到的<code>index</code>页面可以值么写<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">name</span>: <span class="string">'index'</span>,</span><br><span class="line">    path: <span class="string">'/index/:id'</span> // id非必填直接在id后加?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这么以来，当你通过路由访问<code>/index</code>页面的时候，可以直接在该页面通过<code>this.$router.params.id</code>来访问路由的参数</p>
+<p><em>这里需要注意的是，id为必填字符，如果不填写则找不到该路由。如果想非必填可以在参数后面加一个问号<code>?</code></em></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue-router</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/web前端//" class="article-tag-list-link color1">web前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/11/浅谈vue路由/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-如何在Mac上安装JDK-记录笔记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1006,6 +1140,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
             
             <div class="clearfix"></div>
