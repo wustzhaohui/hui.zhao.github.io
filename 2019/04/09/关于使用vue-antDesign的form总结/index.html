@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="重度胡癌患者的博客">
 <meta property="og:description" content="写在最前 由于公司的主要产品线SaaS系统的笨重与UI的不统一，导致现在SaaS系统越来越过于笨重。前端技术组长经过考虑在现有的项目中嵌套iframe来对于接下来的一些重构模块进行大改版。最新的选型时使用阿里的开源框架vueAntDesign来开发接下来的重构模块。于是有幸接触到这个框架，现在对于近期所遇到的关于ant的一些form的问题做出一些总结。 Form 表单 具有数据收集、校验和提交功能">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-04-09T16:10:34.602Z">
+<meta property="og:updated_time" content="2019-04-09T16:14:15.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于使用vue-antDesign的form总结">
 <meta name="twitter:description" content="写在最前 由于公司的主要产品线SaaS系统的笨重与UI的不统一，导致现在SaaS系统越来越过于笨重。前端技术组长经过考虑在现有的项目中嵌套iframe来对于接下来的一些重构模块进行大改版。最新的选型时使用阿里的开源框架vueAntDesign来开发接下来的重构模块。于是有幸接触到这个框架，现在对于近期所遇到的关于ant的一些form的问题做出一些总结。 Form 表单 具有数据收集、校验和提交功能">
@@ -201,6 +201,7 @@ ga('send', 'pageview');
 <h1 id="Form-表单"><a href="#Form-表单" class="headerlink" title="Form 表单"></a><code>Form</code> 表单</h1><blockquote>
 <p>具有数据收集、校验和提交功能的表单，包含复选框、单选框、输入框、下拉选择框等元素。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="在ant中form有三种排列方式"><a href="#在ant中form有三种排列方式" class="headerlink" title="在ant中form有三种排列方式"></a>在<code>ant</code>中<code>form</code>有三种排列方式</h2><blockquote>
 <p>水平排列：标签和表单控件水平排列；（默认）<br>垂直排列：标签和表单控件上下垂直排列；<br>行内排列：表单项水平行内排列。</p>
 </blockquote>
@@ -593,12 +594,6 @@ ga('send', 'pageview');
                         <ul class="article-tag-list" q-show="showTags">
                             
                                 <li class="article-tag-list-item">
-                                    <a href="javascript:void(0)" class="js-tag color4">
-                                        git
-                                    </a>
-                                </li>
-                                
-                                <li class="article-tag-list-item">
                                     <a href="javascript:void(0)" class="js-tag color1">
                                         javascript
                                     </a>
@@ -606,13 +601,19 @@ ga('send', 'pageview');
                                 
                                 <li class="article-tag-list-item">
                                     <a href="javascript:void(0)" class="js-tag color4">
-                                        vue
+                                        git
                                     </a>
                                 </li>
                                 
                                 <li class="article-tag-list-item">
                                     <a href="javascript:void(0)" class="js-tag color5">
                                         hexo
+                                    </a>
+                                </li>
+                                
+                                <li class="article-tag-list-item">
+                                    <a href="javascript:void(0)" class="js-tag color4">
+                                        vue
                                     </a>
                                 </li>
                                 
