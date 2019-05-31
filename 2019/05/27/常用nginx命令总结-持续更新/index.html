@@ -11,21 +11,26 @@
         <link href="/plugins/prettify/tranquil-heart.min.css" rel="stylesheet">
         <title>
             
+                常用nginx命令总结(持续更新) |
+                    
                         重度胡癌患者的博客
         </title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta name="description" content="textarea根据内容自适应高度                                            var contain = document.getElementById(&apos;contain&apos;);         var textarea = document.getElementById(&apos;textarea&apos;);">
-<meta name="keywords" content="blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="重度胡癌患者的博客">
-<meta property="og:url" content="http://www.fullmastach.club/html/textareaAutoHeight.html">
+        <meta name="description" content="之前一直都是在我的github上访问我的博客，使用的是hexo工具来搭建的。可是毕竟是在国内，所以访问博客地址的时候回超级慢。正好在去年双十二在阿里云买了自己的服务器，于是乎就想着在我的服务器上去启动一个Nginx来访问，提高速度。我的服务器是默认安装的Ubantu，于是我就开始了在Ubantu上的折腾。 安装Nginx登陆你的服务器之后，直接使用apt-get安装nginx。输入以下命令 sud">
+<meta name="keywords" content="Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用nginx命令总结(持续更新)">
+<meta property="og:url" content="http://www.fullmastach.club/2019/05/27/常用nginx命令总结-持续更新/index.html">
 <meta property="og:site_name" content="重度胡癌患者的博客">
-<meta property="og:description" content="textarea根据内容自适应高度                                            var contain = document.getElementById(&apos;contain&apos;);         var textarea = document.getElementById(&apos;textarea&apos;);">
+<meta property="og:description" content="之前一直都是在我的github上访问我的博客，使用的是hexo工具来搭建的。可是毕竟是在国内，所以访问博客地址的时候回超级慢。正好在去年双十二在阿里云买了自己的服务器，于是乎就想着在我的服务器上去启动一个Nginx来访问，提高速度。我的服务器是默认安装的Ubantu，于是我就开始了在Ubantu上的折腾。 安装Nginx登陆你的服务器之后，直接使用apt-get安装nginx。输入以下命令 sud">
 <meta property="og:locale" content="Chinese">
-<meta property="og:updated_time" content="2019-01-31T07:37:11.018Z">
+<meta property="og:image" content="http://www.fullmastach.club/images/1559027311889.jpg">
+<meta property="og:image" content="http://www.fullmastach.club/images/WX20190528-151623.png">
+<meta property="og:updated_time" content="2019-05-28T07:26:53.982Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重度胡癌患者的博客">
-<meta name="twitter:description" content="textarea根据内容自适应高度                                            var contain = document.getElementById(&apos;contain&apos;);         var textarea = document.getElementById(&apos;textarea&apos;);">
+<meta name="twitter:title" content="常用nginx命令总结(持续更新)">
+<meta name="twitter:description" content="之前一直都是在我的github上访问我的博客，使用的是hexo工具来搭建的。可是毕竟是在国内，所以访问博客地址的时候回超级慢。正好在去年双十二在阿里云买了自己的服务器，于是乎就想着在我的服务器上去启动一个Nginx来访问，提高速度。我的服务器是默认安装的Ubantu，于是我就开始了在Ubantu上的折腾。 安装Nginx登陆你的服务器之后，直接使用apt-get安装nginx。输入以下命令 sud">
+<meta name="twitter:image" content="http://www.fullmastach.club/images/1559027311889.jpg">
             
                 <link rel="alternative" href="/atom.xml" title="重度胡癌患者的博客" type="application/atom+xml">
                 
@@ -174,59 +179,49 @@ ga('send', 'pageview');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-常用nginx命令总结-持续更新" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      常用nginx命令总结(持续更新)
+    </h1>
+  
+
+        
+        <a href="/2019/05/27/常用nginx命令总结-持续更新/" class="archive-article-date">
+  	<time datetime="2019-05-27T14:54:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>textarea根据内容自适应高度</title>
-</head>
-<body>
-    <div class="textarea-con">
-        <div class="textarea-opacity common" id="contain"></div>
-        <textarea class="textarea common" id="textarea"></textarea>
-    </div>
-    <script>
-        var contain = document.getElementById('contain');
-        var textarea = document.getElementById('textarea');
-        textarea.addEventListener('input', function() {
-            contain.innerHTML = this.value;
-        });
-    </script>
-    <style>
-    .textarea-con{
-        position: relative;
-    }
-    .textarea{
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-        background: #fff;
-        overflow: hidden;
-        resize: none;
-        padding: 0;
-        min-height: 30px;
-    }
-    .textarea-opacity{
-        position: relative;
-        z-index: -1;        
-    }
-    .common{
-        line-height: 16px;
-        font-size: 14px;
-    }
-    </style>
-</body>
-</html>
+        <p>之前一直都是在我的<code>github</code>上访问我的博客，使用的是<code>hexo</code>工具来搭建的。可是毕竟是在国内，所以访问博客地址的时候回超级慢。正好在去年双十二在阿里云买了自己的服务器，于是乎就想着在我的服务器上去启动一个Nginx来访问，提高速度。我的服务器是默认安装的<code>Ubantu</code>，于是我就开始了在<code>Ubantu</code>上的折腾。</p>
+<h1 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h1><p>登陆你的服务器之后，直接使用apt-get安装nginx。输入以下命令</p>
+<pre><code>sudo apt-get install nginx
+</code></pre><p>安装完成之后，需要启动下。（直接输入<code></code>nginx）默认是启动了80端口。在阿里云后台设置一个对外的端口区间。可以直接在你的本地浏览器输入IP + 端口号就可以访问了。如果出现<code>command not found</code>可以尝试自己在<code>/usr/local/bin</code>下配置软连接（不知道如何添加软连接的可以自行谷歌）</p>
+<h1 id="Linux下关于Nginx目录解释"><a href="#Linux下关于Nginx目录解释" class="headerlink" title="Linux下关于Nginx目录解释"></a>Linux下关于Nginx目录解释</h1><p>当你安装完成之后，可以尝试在终端中输入<code>whereis nginx</code>你会得到如下图所示的两个目录</p>
+<p><img src="/images/1559027311889.jpg" alt="关于nginx的目录"></p>
+<p>其中<code>/usr/sbin/nginx</code>目录为nginx的主程序<br>其中<code>/etc/nginx</code>目录存放nginx的配置文件<br>其中<code>/usr/share/nginx</code>目录存放静态文件</p>
+<h2 id="主要讲解关于配置文件目录下的结构"><a href="#主要讲解关于配置文件目录下的结构" class="headerlink" title="主要讲解关于配置文件目录下的结构"></a>主要讲解关于配置文件目录下的结构</h2><p>如下图点开<code>/etc/nginx</code>下目录结构如下</p>
+<p><img src="/images/WX20190528-151623.png" alt="关于nginx的目录"><br><em>紫色为文件夹</em></p>
+<p>至此可以将<code>sites-available</code>文件夹下的文件复制至<code>conf.d</code>文件夹，然后更改其文件名称为<code>nginx.conf</code>。至此，你就可以去尝试启动Nginx了</p>
+<h1 id="常用Nginx命令列表"><a href="#常用Nginx命令列表" class="headerlink" title="常用Nginx命令列表"></a>常用Nginx命令列表</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code>nginx
+</code></pre><h2 id="测试配置文件是否有语法错误"><a href="#测试配置文件是否有语法错误" class="headerlink" title="测试配置文件是否有语法错误"></a>测试配置文件是否有语法错误</h2><pre><code>nginx -t
+</code></pre><h2 id="重启Nginx"><a href="#重启Nginx" class="headerlink" title="重启Nginx"></a>重启Nginx</h2><pre><code>nginx -s reopen
+</code></pre><h2 id="重新加载Nginx配置文件然后再重启"><a href="#重新加载Nginx配置文件然后再重启" class="headerlink" title="重新加载Nginx配置文件然后再重启"></a>重新加载Nginx配置文件然后再重启</h2><pre><code>nginx -s reload
+</code></pre><h2 id="强制停止Nginx"><a href="#强制停止Nginx" class="headerlink" title="强制停止Nginx"></a>强制停止Nginx</h2><pre><code>nginx -s stop
+</code></pre><h2 id="优雅的停止Nginx（处理完成请求再停止）"><a href="#优雅的停止Nginx（处理完成请求再停止）" class="headerlink" title="优雅的停止Nginx（处理完成请求再停止）"></a>优雅的停止Nginx（处理完成请求再停止）</h2><pre><code>nginx -s quit
+</code></pre><h2 id="指定配置文件启动Nginx"><a href="#指定配置文件启动Nginx" class="headerlink" title="指定配置文件启动Nginx"></a>指定配置文件启动Nginx</h2><pre><code>nginx -c &lt;/path/to/config&gt;
+</code></pre><p>eg:</p>
+<pre><code>nginx -c /etc/nginx/conf.d/nginx.conf
+
+// 如果不确定自己的配置文件语法是否正确可以尝试运行监测配置文件
+nginx -t -c /etc/nginx/conf.d/nginx.conf
+</code></pre>
       
 
       
@@ -260,7 +255,29 @@ ga('send', 'pageview');
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/后端开发//" class="article-tag-list-link color5">后端开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -310,7 +327,7 @@ ga('send', 'pageview');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.fullmastach.club/html/textareaAutoHeight.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.fullmastach.club/2019/05/27/常用nginx命令总结-持续更新/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,6 +339,16 @@ ga('send', 'pageview');
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/09/关于使用vue-antDesign的form总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于使用vue-antDesign的form总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -363,7 +390,7 @@ ga('send', 'pageview');
             repo: 'mycomments',
             owner: 'wustzhaohui',
             admin: ['wustzhaohui'],
-            id: 'Thu Jan 31 2019 15:37:11 GMT+0800',
+            id: 'Mon May 27 2019 22:54:14 GMT+0800',
             distractionFreeMode: 'true'
         })
         gitalk.render('gitalk-container')
@@ -394,7 +421,7 @@ ga('send', 'pageview');
     var yiliaConfig = {
         mathjax: false,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
